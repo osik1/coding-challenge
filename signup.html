@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--custom styling-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Sign Up</title>
+</head>
+<body>
+   <div class="page-wrapper">
+    <div class="signup-page">
+        <div class="logo-box">
+            <img src="assets/materials/e-ADAPP-logo-23.png" class="form-logo" alt="">
+        </div>
+        <form action="register.php" method="post">
+            <h1 class="form-header">Sign Up</h1>
+
+            <input type="hidden" name="id" value ="">
+            <div>
+               <label for="">Username</label>
+               <input type="text" name="username" value ="" class="text-input" placeholder="Enter your username">
+           </div>
+           <div>
+              <label for="">Email</label>
+              <input type="email" name="email"  value ="" class="text-input" placeholder="Enter your email">
+          </div>
+          <div>
+              <label for="">Password</label>
+              <input type="password" name="password"  value ="" class="text-input" placeholder="Enter your password">
+          </div>
+          <div>
+              <label for="">Password Confirmation</label>
+              <input type="password" name="passwordConf"  value ="" class="text-input" placeholder="Confirm your password">
+          </div>
+          <div>
+              <button type="submit" name="register-btn" class="btn btn-big">Sign Up</button>
+          </div>
+          <p>Have an account? <a href="login.html">Sign In</a></p>
+
+          <div class="form-footer">
+            <p>By Clicking the button you agree to our <a href="">terms of us</a> and <a href="">privacy policy</a></p>
+          </div>
+        </form>
+    </div>
+
+    <div class="image-banner">
+        <img src="assets/materials/farmer.png" class="signup-banner" alt="">
+    </div>
+   </div> 
+</body>
+</html>
