@@ -9,18 +9,19 @@ height: 100% ;
 width: 100%;
 padding: 0px;
 margin: 0px; 
+font-family: 'Poppins';
 }
-h1, h2, h4, h5, h6{
+h1{
 margin: 5px;
 color: #22A45D;
-font-family: 'SemiBold';
+/* font-family: 'poppings'; */
 }
 a{
 text-decoration: none;
 color: #22A45D;
 }
 a:hover{
-    color: #02642e;
+color: #02642e;
 }
 .btn{
 padding: .5rem 1rem;
@@ -28,8 +29,9 @@ background: #22A45D;
 color: #ffffff;
 border: 1px solid transparent;
 border-radius: 18px;
-font-size: 20px;
-font-family: 'lora', serif ;
+font-size: 25px;
+font-weight: 700;
+
 }
 .btn:hover{
 background: #02642e;
@@ -49,9 +51,9 @@ border-radius: 15px;
 outline: none;
 color: #000000;
 line-height: 1.5rem;
-font-family: 'lora', serif;
 font-size: 20px;
 background: #F3F3FC;
+border: 1px solid #d8d8db;
 }
 .msg{
 width: 50%;
@@ -71,46 +73,293 @@ border: 1px solid red;
 background: rgb(170, 3, 3);
 }
 
+/************************* AUTH STYLING *************************/
 .page-wrapper{
-    width: 100%;
-    height: 100%;
-    display:flex;
+width: 100%;
+min-height: 100%;
+display:flex;
 }
 .signup-page{
-    width: 50%;
-    height: 100%;
-    flex: 1;
-    box-shadow:1rem 1rem 1rem -1rem #0c0b0b;
-    border-radius: 20px;
+/* width: 50%; */
+height: 100%;
+flex: 1;
+border-radius: 20px;
+background-color: #ffffff;
 }
 .signup-page .logo-box{
-    width: 50%;
-    padding-left: 50px;
-    padding-top: 50px;
+width: 50%;
+padding-left: 50px;
+padding-top: 50px;
 
 }
 .signup-page .logo-box img{
-    width: 200px;
+width: 200px;
 }
 .signup-page form{
-    width: 70%;
-    margin: 50px auto; /*to centralize the form vertically*/
-    padding: 25px;
+width: 70%;
+height: 100%;
+margin: 50px auto; /*to centralize the form vertically*/
+padding: 25px;
+
 }
+.signup-page form p{
+font-size: 12px;
+color: #666666;
+}
+.signup-page .form-header{
+font-size: 50px;
+font-family: 'Poppins';
+}
+
 .signup-page form label{
-    color: #000000;
-   font-size: 20px;
-   font-weight: 700;
+color: #000000;
+font-size: 20px;
+font-weight: 700;
+}
+.signup-page form input[type=checkbox]{
+width: 10px;
+height: 10px;
+outline: 1px solid #22A45D;
+box-shadow: none;
+padding-left: 10%;
+
+}
+.signup-page form .Remember{
+width: 100%;
+display: flex;
+}
+.signup-page form .Remember .r-me{
+flex: 1;
+}
+.signup-page form .Remember .r-me span{
+font-size: 12px;
+color: #000000;
+}
+.signup-page form .Remember .f-passw{
+flex: 1;
+}
+.signup-page form .forgot-pass{
+color: #000000;
+text-decoration: underline;
+padding-left: 30%;
+font-size: 12px;
+}
+.signup-page form .forgot-pass:hover{
+color: #02642e;
+}
+.signup-page form .social-login{
+width: 100%;
+}
+.signup-page form .social-header{
+width: 100%;
+display: flex;
+/* margin: 10px auto; */
+}
+.signup-page form .social-header  .head{
+flex: 1; 
+text-align: center; 
+}
+.signup-page form .social-header .line1, .line2{
+flex: 1;
+padding-top: 3%;
+}
+.signup-page form .social-login .social-links{
+display: flex;
+width: 70%;
+margin: 20px auto;
+}
+.signup-page form .social-login .social-links .google{
+flex: 1;
+border: 2px solid #d8d8db;
+border-radius: 20px;
+margin-right: 20px;
+
+}
+.signup-page form .social-login .social-links .google:hover, .facebook:hover, .twitter:hover{
+background: #dadbdb;
+transition: all .3s;  
+}
+.signup-page form .social-login .social-links .google img{
+width: 50px;
+padding-top: 5px;
+padding-left: 20px;
+}
+.signup-page form .social-login .social-links .facebook{
+flex: 1; 
+border: 2px solid #d8d8db;
+border-radius: 20px; 
+margin-right: 20px;
+}
+.signup-page form .social-login .social-links .facebook img{
+width: 50px;
+padding-top: 5px;
+padding-left: 20px;
+}
+.signup-page form .social-login .social-links .twitter{
+flex: 1;  
+border: 2px solid #d8d8db;
+border-radius: 20px;
+}
+.signup-page form .social-login .social-links .twitter img{
+width: 50px;
+padding-top: 5px;
+padding-left: 20px;
 }
 .image-banner{
-    width: 50%; 
-    height: 100%;
-    flex: 1;
+max-height: 100%;
+flex: 1;
 }
 .image-banner img{
-    width: 100%; 
-    height: 100%;
+width: 100%; 
+height: 100%;
+}
+.form-footer{
+width: 60%;
+margin: 50px auto;
 }
 .form-footer p{
-    bottom: 0px; /*so  that it remains  at the bottom*/
+font-size: 12px;
+}
+/************************* AUTH STYLING *************************/
+
+
+/************************* HEADER STYLING *************************/
+header{
+height: 66px;
+max-width: 100%;
+background: #ffffff;
+}
+
+header .items{
+width: 100%;
+display: flex;
+}
+header .items .logos{
+flex: 1;
+}
+header .items .logos .edapp-logo img{
+width: 150px;
+margin-left: 1em;
+margin-right: 3em;
+}
+header .items .logos .sd-logo img{
+width: 70px;
+margin-top: 5px;
+}
+header .items .icons{
+display: flex;
+}
+header .items .icons .search-sec .search-input{
+width: 200px;
+margin-top: 12px;
+margin-right: 10px;
+line-height: 1.5rem;
+font-size: 12px;
+background: #F3F3FC;
+border: 1px solid #d8d8db;
+border-radius: 20px;
+padding: .3rem 1rem;
+display: block;
+outline: none;
+color: #000000;
+/* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center; */
+}
+header .items .icons .lamp{
+border: 1px  solid #000000;
+height: 40px;
+width: 40px;
+margin-top: 10px;
+margin-right: 10px;
+float: right;
+border-radius: 10px;
+background: #000000;
+}
+header .items .icons .lamp img{
+width: 30px;
+margin-top: 5px;
+margin-left: 3px;
+}
+header .items .icons .chats{
+border: 1px  solid #d8d8db; 
+height: 40px;
+width: 40px;
+margin-top: 10px;
+margin-right: 10px;
+border-radius: 10px;
+background: #f2f4f6;
+}
+header .items .icons .chats img{
+width: 30px;
+margin-top: 5px;
+margin-left: 3px;
+}
+header .items .icons .profile-pic{
+height: 40px;
+width: 40px;
+margin-top: 10px;
+margin-right: 10px;
+}
+header .items .icons .profile-pic img{
+width: 100%;
+height: 100%;
+border-radius: 100%;
+}
+header .items .icons .username{
+margin-right: 70px;
+font-size: 15px;
+margin-top: 10px;
+}
+header .items .icons .username  .title{
+font-size: 12px;
+color: #666666;
+}
+
+/************************* HEADER STYLING *************************/
+
+/************************* SIDEBAR STYLING *************************/
+.dashboard-wrapper{
+display: flex;  /*it displays the contents horizontally to each other by default*/
+height: calc(100% - 60px);
+width: 100%; /* NEW FIX */
+}
+
+.dashboard-wrapper .left-sidebar {
+flex: 2;    /*it will occupy 20% of the space*/
+height: 100% ;
+background-color:  #ffffff;
+}
+.dashboard-wrapper .left-sidebar p{
+color: #22A45D;
+font-size: 19px;
+text-align: center;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.dashboard-wrapper .left-sidebar ul{
+list-style: none;
+margin: 0px;
+padding: 0px;
+color: black;
+padding-left: 25px;
+font-size: 15px;
+}
+.dashboard-wrapper .left-sidebar ul li a{
+padding: 3px;
+display: block; /*to span the whole width*/
+color: #000000;
+}
+.dashboard-wrapper .left-sidebar ul li a:hover{
+color: #02642e;
+}
+/************************* SIDEBAR STYLING *************************/
+
+/************************* DASHBOARD CONTENT STYLING *************************/
+.dashboard-wrapper .dashboard-content {
+flex: 8;    /*it will occupy 80% of the space*/
+height: 100%;
+background: #f3f3fc;
+color: #000000;
+width: 100%;
+padding: 40px 100px 100px; 
+overflow-y: scroll;  /* this will enable us to scroll the content when the post are many */
 }
