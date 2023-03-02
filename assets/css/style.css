@@ -24,14 +24,19 @@ a:hover{
 color: #02642e;
 }
 .btn{
-padding: .5rem 1rem;
+padding: .4rem 1rem;
 background: #22A45D;
 color: #ffffff;
 border: 1px solid transparent;
-border-radius: 18px;
-font-size: 25px;
+border-radius: 10px;
+font-size: 12px;
 font-weight: 700;
-
+}
+.save-btn{
+padding: .4rem 1rem;
+background: transparent;
+color: #000000;
+border: 2px solid #22A45D;
 }
 .btn:hover{
 background: #02642e;
@@ -377,7 +382,6 @@ display: flex;
     width: 60px;
     height: 60px;
     border-radius: 5px;
-    /* flex: 1; */
     padding-left: 30px;
     padding-top: 30px;
     margin-right: 20px;
@@ -411,7 +415,6 @@ display: flex;
     padding: 12px;
 }
 .dashboard-wrapper .dashboard-content .form-wrapper ul{
-    /* float: right; */
 margin: 0px;
 padding: 0px;
 list-style: none;
@@ -424,6 +427,7 @@ position: relative;
 .dashboard-wrapper .dashboard-content .form-wrapper ul li a{
     color: #000000;
     padding: 10px;
+    font-size: 12px;
 }
 .dashboard-wrapper .dashboard-content .form-wrapper ul li a:hover{
 color: #02642e;
@@ -435,25 +439,69 @@ color: #02642e;
     padding: 20px;
     border-top: 1px solid #d8d8db;
 }
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box label{
+    font-size: 12px;
+}
 .dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit{
     flex: 1;
-    margin-right: 20px;
+    padding: 20px;
+    /* padding-left: 30px; */
 }
 .dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .profile-box{
    border-radius: 100%;
    width: 100px; 
    height: 100px;
    border: 2px solid #22A45D;
+   margin-left: 40px;
 }
 .dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .profile-box img{
     width: 100%;
     height: 100%;
     border-radius: 100%;
 }
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box 
+.profile-edit .profile-box img:hover{
+    opacity: 0.9;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .uploads{
+    display: flex;
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .uploads .capture{
+    flex: 1;
+    margin: auto;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box 
+.profile-edit .uploads img:hover{
+    background-color: #dadbdb;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .uploads .capture img{
+    width: 40px;
+    border: 1px solid #666666;
+    border-radius: 100%;
+    padding: 5px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .uploads .upload{
+    flex: 1;
+    margin: auto;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .uploads .upload img{
+    width: 40px;
+    border: 1px solid #666666;
+    border-radius: 100%;
+    padding: 5px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .radio{
+    /* width: 100%; */
+    /* justify-content: center; */
+    /* align-items: center;
+    padding: 20px; */
+}
 .dashboard-wrapper .dashboard-content .form-wrapper .form-box .text-input{
     padding: .5rem 0.2rem;
     display: block;
-    /* width: 100%; */
     border-radius: 5px;
     outline: none;
     color: #000000;
@@ -461,6 +509,7 @@ color: #02642e;
     font-size: 15px;
     background: #ffffff;
     border: 1px solid #d8d8db; 
+   
 }
 .dashboard-wrapper .dashboard-content .form-wrapper .form-box .form-one{
     flex: 1;
@@ -472,4 +521,8 @@ color: #02642e;
 }
 .dashboard-wrapper .dashboard-content .form-wrapper .form-box .form-three{
     flex: 1;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .buttons{
+  padding-left: 100px;
+  padding-top: 100%;
 }
