@@ -262,7 +262,6 @@ padding: .3rem 1rem;
 display: block;
 outline: none;
 color: #000000;
-/* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center; */
 }
 header .items .icons .lamp{
 border: 1px  solid #000000;
@@ -357,9 +356,120 @@ color: #02642e;
 .dashboard-wrapper .dashboard-content {
 flex: 8;    /*it will occupy 80% of the space*/
 height: 100%;
-background: #f3f3fc;
+background: #f2f4f6;
+
 color: #000000;
 width: 100%;
-padding: 40px 100px 100px; 
+padding: 23px 40px 40px; 
 overflow-y: scroll;  /* this will enable us to scroll the content when the post are many */
+}
+
+.dashboard-wrapper .dashboard-content .header-box{
+width: 100%;
+background: #fafbfc;
+height: 150px;
+border-radius: 5px;
+display: flex;
+
+}
+
+.dashboard-wrapper .dashboard-content .header-box .icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    /* flex: 1; */
+    padding-left: 30px;
+    padding-top: 30px;
+    margin-right: 20px;
+}
+.dashboard-wrapper .dashboard-content .header-box .icon img{
+    width: 70px;
+    height: 70px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.dashboard-wrapper .dashboard-content .header-box .heading{
+    padding: 40px;
+    padding-right: 40px;
+}
+.dashboard-wrapper .dashboard-content .header-box .heading .title{
+    font-size: 20px;
+}
+.dashboard-wrapper .dashboard-content .header-box .heading .bio{
+    font-size: 15px;
+    color: #666666;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper{
+    width: 100%;
+    background: #fafbfc;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper h2{
+    padding: 12px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper ul{
+    /* float: right; */
+margin: 0px;
+padding: 0px;
+list-style: none;
+padding-top: 20px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper ul li{
+    float: left;
+position: relative;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper ul li a{
+    color: #000000;
+    padding: 10px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper ul li a:hover{
+color: #02642e;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    border-top: 1px solid #d8d8db;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit{
+    flex: 1;
+    margin-right: 20px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .profile-box{
+   border-radius: 100%;
+   width: 100px; 
+   height: 100px;
+   border: 2px solid #22A45D;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .profile-edit .profile-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .text-input{
+    padding: .5rem 0.2rem;
+    display: block;
+    /* width: 100%; */
+    border-radius: 5px;
+    outline: none;
+    color: #000000;
+    line-height: 1.2rem;
+    font-size: 15px;
+    background: #ffffff;
+    border: 1px solid #d8d8db; 
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .form-one{
+    flex: 1;
+    margin-right: 30px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .form-two{
+    flex: 1;
+    margin-right: 30px;
+}
+.dashboard-wrapper .dashboard-content .form-wrapper .form-box .form-three{
+    flex: 1;
 }
