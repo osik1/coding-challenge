@@ -423,16 +423,52 @@ background: #fafbfc;
 height: 45%;
 margin-bottom: 20px;
 }
+.dashboard-wrapper .dashboard-content .stats .stat-one .week .amount .cal{
+    padding: 10px;
+    font-size: 12px;
+    color: #666666;   
+}
+.dashboard-wrapper .dashboard-content .stats .stat-one .week .amount .money{
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 10px;
+}
 .dashboard-wrapper .dashboard-content .stats .stat-one .income{
 flex: 1;
 height: 45%;
 background: #fafbfc;
-
+}
+.dashboard-wrapper .dashboard-content .stats .stat-one .income .in{
+    padding: 10px;
+    font-size: 15px;
+    color: #666666;
+}
+.dashboard-wrapper .dashboard-content .stats .stat-one .income .money{
+    /* padding: 5px; */
+    font-size: 20px;
+   font-weight: 700;
+   padding-left: 10px;
+}
+.dashboard-wrapper .dashboard-content .stats .stat-one .income .percent{
+    color: #22A45D;
+    float: right;
+/* color: #ee06ee; */
 }
 .dashboard-wrapper .dashboard-content .stats .stat-two{
 flex: 1;
 background: #fafbfc;
 margin-right: 20px;
+max-height: 100%; 
+}
+.dashboard-wrapper .dashboard-content .stats .stat-two .rev{
+    color: #666666;
+    font-size: 12px;
+    padding-left: 5px;
+}
+.dashboard-wrapper .dashboard-content .stats .stat-two .revenue{
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 60%;
 }
 .dashboard-wrapper .dashboard-content .stats .stat-three{
 flex: 1;

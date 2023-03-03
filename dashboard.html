@@ -8,6 +8,90 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Dinosaur', 'Length'],
+            ['Acrocanthosaurus (top-spined lizard)', 12.2],
+            ['Albertosaurus (Alberta lizard)', 9.1],
+            ['Allosaurus (other lizard)', 12.2],
+            ['Apatosaurus (deceptive lizard)', 22.9],
+            ['Archaeopteryx (ancient wing)', 0.9],
+            ['Argentinosaurus (Argentina lizard)', 36.6],
+            ['Baryonyx (heavy claws)', 9.1],
+            ['Brachiosaurus (arm lizard)', 30.5],
+            ['Ceratosaurus (horned lizard)', 6.1],
+            ['Coelophysis (hollow form)', 2.7],
+            ['Compsognathus (elegant jaw)', 0.9],
+            ['Deinonychus (terrible claw)', 2.7],
+            ['Diplodocus (double beam)', 27.1],
+            ['Dromicelomimus (emu mimic)', 3.4],
+            ['Gallimimus (fowl mimic)', 5.5],
+            ['Mamenchisaurus (Mamenchi lizard)', 21.0],
+            ['Megalosaurus (big lizard)', 7.9],
+            ['Microvenator (small hunter)', 1.2],
+            ['Ornithomimus (bird mimic)', 4.6],
+            ['Oviraptor (egg robber)', 1.5],
+            ['Plateosaurus (flat lizard)', 7.9],
+            ['Sauronithoides (narrow-clawed lizard)', 2.0],
+            ['Seismosaurus (tremor lizard)', 45.7],
+            ['Spinosaurus (spiny lizard)', 12.2],
+            ['Supersaurus (super lizard)', 30.5],
+            ['Tyrannosaurus (tyrant lizard)', 15.2],
+            ['Ultrasaurus (ultra lizard)', 30.5],
+            ['Velociraptor (swift robber)', 1.8]]);
+  
+          var options = {
+            title: 'Lengths of dinosaurs, in meters',
+            legend: { position: 'none' },
+          };
+  
+          var chart = new google.visualization.Histogram(document.getElementById('chart_divs'));
+          chart.draw(data, options);
+        }
+      </script>
+    <!-- // revenue // -->
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('number', 'x');
+          data.addColumn('number', 'values');
+          data.addColumn({id:'i0', type:'number', role:'interval'});
+          data.addColumn({id:'i1', type:'number', role:'interval'});
+          data.addColumn({id:'i2', type:'number', role:'interval'});
+          data.addColumn({id:'i2', type:'number', role:'interval'});
+          data.addColumn({id:'i2', type:'number', role:'interval'});
+          data.addColumn({id:'i2', type:'number', role:'interval'});
+    
+          data.addRows([
+              [1, 100, 90, 110, 85, 96, 104, 120],
+              [2, 120, 95, 130, 90, 113, 124, 140],
+              [3, 130, 105, 140, 100, 117, 133, 139],
+              [4, 90, 85, 95, 85, 88, 92, 95],
+              [5, 70, 74, 63, 67, 69, 70, 72],
+              [6, 30, 39, 22, 21, 28, 34, 40],
+              [7, 80, 77, 83, 70, 77, 85, 90],
+              [8, 100, 90, 110, 85, 95, 102, 110]]);
+    
+          // The intervals data as narrow lines (useful for showing raw source data)
+          var options_lines = {
+            series: [{'color': '#ee06ee'}],
+            intervals: { style: 'boxes' },
+            legend: 'none'
+          };
+    
+          var chart_lines = new google.visualization.LineChart(document.getElementById('chart_lines'));
+          chart_lines.draw(data, options_lines);
+        }
+      </script>
+    <!-- /// big graph // -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -22,7 +106,7 @@
         ]);
 
         var options = {
-          title: 'Company Performance',
+          title: 'Farmers Performance',
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
@@ -95,7 +179,9 @@
             <div class="stat-one">
                 <div class="week">
                     <div class="amount">
-                        Ghc 2,072
+                        <p class="cal">This week</p>
+                        <p class="money">Ghc 2,072</p>
+                        
                     </div>
                     <div class="chart">
 
@@ -103,14 +189,19 @@
                     
                 </div>
                 <div class="income">
-                    Ghc 13,000
+                    <p class="in">Income</p>
+                    <p class="money"> Ghc 13,000</p>
+                    <p class="percent">+14%</p>
                 </div>
             </div>
             <div class="stat-two">
-                <p>Revenue</p><p class="revenue">Ghc 13,0000</p>
+                <p class="rev">Revenue</p><p class="revenue">Ghc 13,000</p>
+                <div id="chart_lines" style="width: 100%; height: 150px"></div>
             </div>
             <div class="stat-three">
-                <p>chart</p>
+                <p>Total earnings</p>
+                <div id="chart_divs" style="width: 100%; height: 180px;"></div>
+
             </div>
         </div>
         <div class="form-wrapper">
