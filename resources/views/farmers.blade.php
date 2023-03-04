@@ -7,24 +7,15 @@
     <!--custom styling-->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script language="Javascript">
-        window.onload=function(){
-        var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
-        if (mobile) {
-           var alerted = localStorage.getItem('alerted') || false;
-          if (alerted !== true) {
-           alert("Visit this on a Computer for Better View");
-           localStorage.setItem('alerted', true);
-         } else {
-           
-         }}}
-         </script>
+    
     <title>Farmer's Panel</title>
 </head>
 <body>
+   <!-- // header // -->
    @include('header')
  
    <div class="dashboard-wrapper">
+    <!-- // Side bar // -->
    @include('sidebar')
 
     <div class="dashboard-content">
@@ -142,6 +133,18 @@
     </div>
 
    </div> 
-
+   <script>
+   window.onload=function(){
+    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) {
+            var alerted = localStorage.getItem('alerted') || '';
+        if (alerted != 'yes') {
+            alert("Visit this on a Computer for Better View");
+            localStorage.setItem('alerted','yes');
+    
+    } else {
+    
+    }}}
+    </script>
 </body>
 </html>

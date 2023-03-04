@@ -330,12 +330,39 @@ height: 40px;
 width: 40px;
 margin-top: 10px;
 margin-right: 10px;
+position: relative;
 }
 header .items .icons .profile-pic img{
 width: 100%;
 height: 100%;
 border-radius: 100%;
 }
+header .items .icons .profile-pic .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  header .items .icons .profile-pic .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #d8d8db;
+    min-width: 100px;
+    z-index: 1;
+    margin-top: 0px;
+    border-radius: 10px;
+  }
+  header .items .icons .profile-pic .dropdown-content a {
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+  }
+  header .items .icons .profile-pic .dropdown-content a:hover {
+    color: #22A45D;
+  }
+  header .items .icons .profile-pic .show {
+    display: block;
+  }
 header .items .icons .username{
 margin-right: 70px;
 font-size: 15px;

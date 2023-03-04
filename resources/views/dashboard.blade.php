@@ -119,52 +119,13 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <!-- <header>
-        <div class="items">
-            <div class="logos">
-                <div class="edapp-logo">
-                    <a href=""><img src="{{ asset('assets/materials/e-ADAPP-logo-23.png')}}" alt=""></a>
-                    <a href=""class="sd-logo"><img src="{{ asset('assets/materials/3sdclTHE 2.png')}}" alt=""></a>
-                </div>
 
-            </div>
-            <div class="icons">
-                <div class="search-sec">
-                    <form action="search" method="post">
-                        <input type="text" name="search-term" class="search-input" placeholder="type to search">
-                    </form>
-                </div>
-                <div class="lamp">
-                    <a href=""><img src="{{ asset('assets/materials/lamp.png')}}" alt=""></a>
-                </div>
-                <div class="chats">
-                    <a href=""><img src="{{ asset('assets/materials/language.png')}}" alt=""></a>
-                </div>
-                <div class="profile-pic">
-                    <a href=""><img src="{{ asset('assets/materials/bored-6945309_1920.png')}}" alt=""></a>
-                </div>
-                <div class="username">
-                    <p>Kwame Anim</p><p class="title">Farmer</p>
-                </div>
-            </div>
-
-        </div>
-    </header> -->
+    <!-- // header // -->
     @include('header')
 
  
    <div class="dashboard-wrapper">
-    <!-- <div class="left-sidebar">
-        <p>MAIN NAVIGATION</p>
-        <ul>
-           <li><a href="{{ url('dashboard')}}" class="nav-item nav-dashboard">Dashboard</a></li>
-            <li><a href="{{ url('farmers')}}" class="nav-item nav-posts">Farmers</a></li>
-            <li><a href="" class="nav-item nav-users">Staff</a></li>
-            <li><a href="" class="nav-item nav-topics">Synchronization</a></li>
-            <li><a href="" class="nav-item nav-comments">Settings</a></li>
-            <li><a href="" class="nav-item nav-info">Report</a></li>
-        </ul>  
-    </div> -->
+    <!-- // Side bar // -->
     @include('sidebar')
 
     <div class="dashboard-content">
@@ -228,6 +189,7 @@
     } else {
 
     }}}
-</script>
+    </script>
+    <script type="text/javascript" src="{{ asset('assets/js/scripts.js')}}"></script>
 </body>
 </html>

@@ -21,6 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'social_id',
+        'social_type',
+        'avatar',
+    ];
+
+    protected $guarded= [
+        'role',// role should be 4 (user, admin, bank admin, and  HomeHub admin)
     ];
 
     /**
