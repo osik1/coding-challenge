@@ -5,56 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--custom styling-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script language="Javascript">
+        window.onload=function(){
+        var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+        if (mobile) {
+           var alerted = localStorage.getItem('alerted') || false;
+          if (alerted !== true) {
+           alert("Visit this on a Computer for Better View");
+           localStorage.setItem('alerted', true);
+         } else {
+           
+         }}}
+         </script>
     <title>Farmer's Panel</title>
 </head>
 <body>
-    <header>
-        <div class="items">
-            <div class="logos">
-                <div class="edapp-logo">
-                    <a href=""><img src="assets/materials/e-ADAPP-logo-23.png" alt=""></a>
-                    <a href=""class="sd-logo"><img src="assets/materials/3sdclTHE 2.png" alt=""></a>
-                </div>
-
-            </div>
-            <div class="icons">
-                <div class="search-sec">
-                    <form action="search" method="post">
-                        <input type="text" name="search-term" class="search-input" placeholder="type to search">
-                    </form>
-                </div>
-                <div class="lamp">
-                    <a href=""><img src="assets/materials/lamp.png" alt=""></a>
-                </div>
-                <div class="chats">
-                    <a href=""><img src="assets/materials/language.png" alt=""></a>
-                </div>
-                <div class="profile-pic">
-                    <a href=""><img src="assets/materials/bored-6945309_1920.png" alt=""></a>
-                </div>
-                <div class="username">
-                    <p>Kwame Anim</p><p class="title">Farmer</p>
-                </div>
-            </div>
-
-        </div>
-    </header>
-
+   @include('header')
  
    <div class="dashboard-wrapper">
-    <div class="left-sidebar">
-        <p>MAIN NAVIGATION</p>
-        <ul>
-           <li><a href="dashboard.html" class="nav-item nav-dashboard">Dashboard</a></li>
-            <li><a href="farmers.html" class="nav-item nav-posts">Farmers</a></li>
-            <li><a href="" class="nav-item nav-users">Staff</a></li>
-            <li><a href="" class="nav-item nav-topics">Synchronization</a></li>
-            <li><a href="" class="nav-item nav-comments">Settings</a></li>
-            <li><a href="" class="nav-item nav-info">Report</a></li>
-        </ul>  
-    </div>
+   @include('sidebar')
 
     <div class="dashboard-content">
         <div class="header-box">
@@ -171,5 +142,6 @@
     </div>
 
    </div> 
+
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--custom styling-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -116,15 +116,15 @@
       }
     </script>
   
-    <title>Farmer's Panel</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="items">
             <div class="logos">
                 <div class="edapp-logo">
-                    <a href=""><img src="assets/materials/e-ADAPP-logo-23.png" alt=""></a>
-                    <a href=""class="sd-logo"><img src="assets/materials/3sdclTHE 2.png" alt=""></a>
+                    <a href=""><img src="{{ asset('assets/materials/e-ADAPP-logo-23.png')}}" alt=""></a>
+                    <a href=""class="sd-logo"><img src="{{ asset('assets/materials/3sdclTHE 2.png')}}" alt=""></a>
                 </div>
 
             </div>
@@ -135,13 +135,13 @@
                     </form>
                 </div>
                 <div class="lamp">
-                    <a href=""><img src="assets/materials/lamp.png" alt=""></a>
+                    <a href=""><img src="{{ asset('assets/materials/lamp.png')}}" alt=""></a>
                 </div>
                 <div class="chats">
-                    <a href=""><img src="assets/materials/language.png" alt=""></a>
+                    <a href=""><img src="{{ asset('assets/materials/language.png')}}" alt=""></a>
                 </div>
                 <div class="profile-pic">
-                    <a href=""><img src="assets/materials/bored-6945309_1920.png" alt=""></a>
+                    <a href=""><img src="{{ asset('assets/materials/bored-6945309_1920.png')}}" alt=""></a>
                 </div>
                 <div class="username">
                     <p>Kwame Anim</p><p class="title">Farmer</p>
@@ -149,21 +149,23 @@
             </div>
 
         </div>
-    </header>
+    </header> -->
+    @include('header')
 
  
    <div class="dashboard-wrapper">
-    <div class="left-sidebar">
+    <!-- <div class="left-sidebar">
         <p>MAIN NAVIGATION</p>
         <ul>
-           <li><a href="dashboard.html" class="nav-item nav-dashboard">Dashboard</a></li>
-            <li><a href="farmers.html" class="nav-item nav-posts">Farmers</a></li>
+           <li><a href="{{ url('dashboard')}}" class="nav-item nav-dashboard">Dashboard</a></li>
+            <li><a href="{{ url('farmers')}}" class="nav-item nav-posts">Farmers</a></li>
             <li><a href="" class="nav-item nav-users">Staff</a></li>
             <li><a href="" class="nav-item nav-topics">Synchronization</a></li>
             <li><a href="" class="nav-item nav-comments">Settings</a></li>
             <li><a href="" class="nav-item nav-info">Report</a></li>
         </ul>  
-    </div>
+    </div> -->
+    @include('sidebar')
 
     <div class="dashboard-content">
         <div class="header-box">
@@ -191,7 +193,7 @@
                 <div class="income">
                     <p class="in">Income</p>
                     <p class="money"> Ghc 13,000</p>
-                    <p class="percent">+14%</p>
+                    <!-- <p class="percent">+14%</p> -->
                 </div>
             </div>
             <div class="stat-two">
@@ -214,5 +216,18 @@
     </div>
 
    </div> 
+   <script language="Javascript">
+    window.onload=function(){
+    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) {
+         var alerted = localStorage.getItem('alerted') || '';
+        if (alerted != 'yes') {
+         alert("Visit this on a Computer for Better View");
+         localStorage.setItem('alerted','yes');
+
+    } else {
+
+    }}}
+</script>
 </body>
 </html>

@@ -5,15 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--custom styling-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script language="Javascript">
+        window.onload=function(){
+        var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+        if (mobile) {
+           var alerted = localStorage.getItem('alerted') || false;
+          if (alerted !== true) {
+           alert("Visit this on a Computer for Better View");
+           localStorage.setItem('alerted', true);
+         } else {
+           
+         }}}
+    </script>
     <title>Login</title>
 </head>
 <body>
    <div class="page-wrapper">
     <div class="signup-page">
         <div class="logo-box">
-            <img src="assets/materials/e-ADAPP-logo-23.png" class="form-logo" alt="">
+            <img src="{{ asset('assets/materials/e-ADAPP-logo-23.png')}}" class="form-logo" alt="">
         </div>
         <form action="register.php" method="post">
             <h1 class="form-header">Login</h1>
@@ -42,7 +54,7 @@
               <button type="submit" name="register-btn" class="btn btn-big">Login</button>
           </div>
           <br>
-          <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+          <p>Don't have an account? <a href="{{ url('signup')}}">Sign up</a></p>
           <br>
           <div class="social-header">
             <div class="line1">
@@ -75,7 +87,7 @@
     </div>
 
     <div class="image-banner">
-        <img src="assets/materials/farmer.png" class="signup-banner" alt="">
+        <img src="{{ asset('assets/materials/farmer.png')}}" class="signup-banner" alt="">
     </div>
    </div> 
 </body>
