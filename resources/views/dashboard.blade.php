@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--custom styling-->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+    <!-- // responsive notice // -->
+    <script language="Javascript">
+    window.onload=function(){
+    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) {
+         var alerted = localStorage.getItem('alerted') || '';
+        if (alerted != 'yes') {
+         alert("Visit this on a Computer for Better View");
+         localStorage.setItem('alerted','yes');
+
+    } else {
+
+    }}}
+    </script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -122,7 +136,13 @@
 
     <!-- // header // -->
     @include('header')
-
+    
+    <!-- //alert message  -->
+    @if (session('success'))
+      <div class="alert alert-success" role="alert">
+          {{ session('success') }}
+      </div>
+    @endif
  
    <div class="dashboard-wrapper">
     <!-- // Side bar // -->
@@ -177,19 +197,7 @@
     </div>
 
    </div> 
-   <script language="Javascript">
-    window.onload=function(){
-    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
-    if (mobile) {
-         var alerted = localStorage.getItem('alerted') || '';
-        if (alerted != 'yes') {
-         alert("Visit this on a Computer for Better View");
-         localStorage.setItem('alerted','yes');
-
-    } else {
-
-    }}}
-    </script>
+   
     <script type="text/javascript" src="{{ asset('assets/js/scripts.js')}}"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@
                         <img id="drop" class="dropbtn"  src="{{ asset('assets/materials/bored-6945309_1920.png')}}" alt="">
                     <div id="myDropdown" class="dropdown-content">
                         <a href=""><i class="fa-regular fa-user"></i> Profile</a>
-                        <a href="{{ url('/')}}"><i class="fa-light fa-arrow-right-from-bracket"></i> Logout</a>
+                        <a href="{{ url('logout')}}"><i class="fa-light fa-arrow-right-from-bracket"></i> Logout</a>
                     </div>
                 </div>
                 <div class="username">

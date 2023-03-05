@@ -27,18 +27,19 @@
         <div class="logo-box">
             <img src="{{ asset('assets/materials/e-ADAPP-logo-23.png')}}" class="form-logo" alt="">
         </div>
-        <form action="register.php" method="post">
+        <form action="{{ route('login.post') }}" method="POST">
+        @csrf
             <h1 class="form-header">Login</h1>
 
             <input type="hidden" name="id" value ="">
           
            <div>
               <label for="">Email</label>
-              <input type="email" name="email"  value ="" class="text-input" placeholder="Email or username">
+              <input type="email" name="email"  value ="{{ __('email') }}" class="text-input" placeholder="Email or username">
           </div>
           <div>
               <label for="">Passw</label>
-              <input type="password" name="password"  value ="" class="text-input" placeholder="Password">
+              <input type="password" name="password"  value ="{{ __('password') }}" class="text-input" placeholder="Password">
           </div>
           <br>
           <div class="Remember">
@@ -70,13 +71,13 @@
           <div class="social-login">
             <div class="social-links">
                 <div class="google">
-                    <a href="  "><img src="assets/materials/search.png" alt=""></a>
+                    <a href="{{ route('auth.google') }}"><img src="assets/materials/search.png" alt=""></a>
                 </div>
                 <div class="facebook">
                     <a href="  "><img src="assets/materials/facebook.png" alt=""></a>
                 </div>
                 <div class="twitter">
-                    <a href="  "><img src="assets/materials/twitter.png" alt=""></a>
+                    <a href="{{ route('auth.twitter') }}"><img src="assets/materials/twitter.png" alt=""></a>
                 </div>
             </div>
           </div>

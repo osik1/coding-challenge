@@ -7,7 +7,20 @@
     <!--custom styling-->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    
+        <!-- // responsive notice // -->
+    <script language="Javascript">
+    window.onload=function(){
+    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) {
+         var alerted = localStorage.getItem('alerted') || '';
+        if (alerted != 'yes') {
+         alert("Visit this on a Computer for Better View");
+         localStorage.setItem('alerted','yes');
+
+    } else {
+
+    }}}
+    </script>
     <title>Farmer's Panel</title>
 </head>
 <body>
@@ -133,18 +146,7 @@
     </div>
 
    </div> 
-   <script>
-   window.onload=function(){
-    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
-    if (mobile) {
-            var alerted = localStorage.getItem('alerted') || '';
-        if (alerted != 'yes') {
-            alert("Visit this on a Computer for Better View");
-            localStorage.setItem('alerted','yes');
-    
-    } else {
-    
-    }}}
-    </script>
+   <script type="text/javascript" src="{{ asset('assets/js/scripts.js')}}"></script>
+
 </body>
 </html>

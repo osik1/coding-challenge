@@ -28,32 +28,45 @@
         <div class="logo-box">
             <img src="{{ asset('assets/materials/e-ADAPP-logo-23.png')}}" class="form-logo" alt="">
         </div>
-        <form action="register.php" method="post">
+        <form action="{{ route('register.post') }}" method="post">
+        @csrf
             <h1 class="form-header">Register</h1>
 
             <input type="hidden" name="id" value ="">
             <div>
                <label for="">Username</label>
-               <input type="text" name="username" value ="" class="text-input" placeholder="Enter your username">
+               <input type="text" name="name" value ="" class="text-input" placeholder="Enter your username">
+               @if ($errors->has('name'))
+                <span class="text-danger">{{ $errors->first('name') }}</span>
+               @endif
            </div>
            <div>
               <label for="">Email</label>
               <input type="email" name="email"  value ="" class="text-input" placeholder="Enter your email">
+              @if ($errors->has('email'))
+                <span class="text-danger">{{ $errors->first('email') }}</span>
+              @endif
           </div>
           <div>
               <label for="">Passw</label>
               <input type="password" name="password"  value ="" class="text-input" placeholder="Enter your password">
+              @if ($errors->has('password'))
+                <span class="text-danger">{{ $errors->first('password') }}</span>
+              @endif
           </div>
           <div>
               <label for="">Passw Confirm</label>
-              <input type="password" name="passwordConf"  value ="" class="text-input" placeholder="Confirm your password">
+              <input type="password" name="c_password"  value ="" class="text-input" placeholder="Confirm your password">
+              @if ($errors->has('c_password'))
+                <span class="text-danger">{{ $errors->first('c_password') }}</span>
+              @endif
           </div>
           <br>
           <div>
               <button type="submit" name="register-btn" class="btn btn-big">Register</button>
           </div>
           <br>
-          <p>Have an account? <a href="{{ url('/')}}">Sign In</a></p>
+          <p>Have an account? <a href="{{ url('login')}}">Sign In</a></p>
 
         
         </form>

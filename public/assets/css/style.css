@@ -338,31 +338,31 @@ height: 100%;
 border-radius: 100%;
 }
 header .items .icons .profile-pic .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  header .items .icons .profile-pic .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #d8d8db;
-    min-width: 100px;
-    z-index: 1;
-    margin-top: 0px;
-    border-radius: 10px;
-  }
-  header .items .icons .profile-pic .dropdown-content a {
-    color: black;
-    padding: 5px 5px;
-    text-decoration: none;
-    display: block;
-    font-weight: 700;
-  }
-  header .items .icons .profile-pic .dropdown-content a:hover {
-    color: #22A45D;
-  }
-  header .items .icons .profile-pic .show {
-    display: block;
-  }
+position: relative;
+display: inline-block;
+}
+header .items .icons .profile-pic .dropdown-content {
+display: none;
+position: absolute;
+background-color: #d8d8db;
+min-width: 100px;
+z-index: 1;
+margin-top: 0px;
+border-radius: 10px;
+}
+header .items .icons .profile-pic .dropdown-content a {
+color: black;
+padding: 5px 5px;
+text-decoration: none;
+display: block;
+font-weight: 700;
+}
+header .items .icons .profile-pic .dropdown-content a:hover {
+color: #22A45D;
+}
+header .items .icons .profile-pic .show {
+display: block;
+}
 header .items .icons .username{
 margin-right: 70px;
 font-size: 15px;
@@ -408,7 +408,11 @@ display: block; /*to span the whole width*/
 color: #000000;
 }
 .dashboard-wrapper .left-sidebar ul li a:hover{
-color: #02642e;
+color: #22A45D;
+}
+.dashboard-wrapper .left-sidebar ul li  a.active{
+color: #22A45D;
+font-weight: 600; 
 }
 /************************* SIDEBAR STYLING *************************/
 
