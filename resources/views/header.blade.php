@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="username">
-                    <p>Kwame Anim</p><p class="title">Farmer</p>
+                    <p>{{ auth()->user()->name }}</p><p class="title">Farmer</p>
                 </div>
             </div>
 

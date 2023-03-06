@@ -30,17 +30,24 @@
         <form action="{{ route('login.post') }}" method="POST">
         @csrf
             <h1 class="form-header">Login</h1>
+              <!-- //alert message  -->
 
-            <input type="hidden" name="id" value ="">
+            <input type="hidden" name="id" value =""> 
           
            <div>
               <label for="">Email</label>
-              <input type="email" name="email"  value =" " class="text-input" placeholder="Email or username">
+              <input type="email" name="email"  value ="" class="text-input" placeholder="Email or username">
+              @if ($errors->has('email'))
+                <span class="text-danger">{{ $errors->first('email') }}</span>
+              @endif
           </div>
           <div>
               <label for="">Passw</label>
-              <input type="password" name="password"  value =" " class="text-input" placeholder="Password">
+              <input type="password" name="password"  value ="" class="text-input" placeholder="Password">
           </div>
+            @if ($errors->has('password'))
+                <span class="text-danger">{{ $errors->first('password') }}</span>
+            @endif
           <br>
           <div class="Remember">
             <div class="r-me">

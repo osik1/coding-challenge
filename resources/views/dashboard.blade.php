@@ -136,19 +136,19 @@
 
     <!-- // header // -->
     @include('header')
-    
-    <!-- //alert message  -->
-    @if (session('success'))
-      <div class="alert alert-success" role="alert">
-          {{ session('success') }}
-      </div>
-    @endif
+
  
    <div class="dashboard-wrapper">
     <!-- // Side bar // -->
     @include('sidebar')
 
     <div class="dashboard-content">
+               <!-- //alert message  -->
+        @if (session('success'))
+          <div class="alert alert-success" role="alert">
+              {{ session('success') }}
+          </div>
+        @endif
         <div class="header-box">
             <div class="icon">
                 <img src="assets/materials/agenda.png" alt="">

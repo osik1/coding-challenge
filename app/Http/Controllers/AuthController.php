@@ -29,9 +29,7 @@ class AuthController extends Controller
         $user = User::create($input);
         // log user in
         Auth::login($user);
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
-
-
+        return redirect("dashboard")->withSuccess('You are welcome, '. $user->name);
     }
 
      /**
@@ -126,11 +124,13 @@ class AuthController extends Controller
         ]);
      
         $credentials = $request->only('email', 'password');
-
+        if ($credentials){
+            $user = User::where('email', $request->email)->first();
+        }
         if (Auth::attempt($credentials)) {
 
             return redirect()->intended('dashboard')
-                 ->withSuccess('You have Successfully loggedin');
+                 ->withSuccess('You are welcome, '. $user->name);
         } 
         return redirect("login")->withSuccess('Opps! You have entered invalid credentials');
     }

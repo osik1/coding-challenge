@@ -80,12 +80,14 @@ padding: 8px;
 border-radius: 20px;
 list-style: none;
 }
-.success{
+.alert-success{
 color: #fff;
 border: 1px solid rgb(59, 184, 59);
-background: rgb(1, 68, 1);
+background: #22A45D;
+border-radius: 10px;
+padding: 5px;
 }
-.error{
+.alert-error{
 color:#fff;
 border: 1px solid red;
 background: rgb(170, 3, 3);
@@ -252,6 +254,11 @@ margin: 50px auto;
 }
 .form-footer p{
 font-size: 12px;
+}
+.signup-page form .text-danger{
+color: red;
+font-size: 12px;
+font-weight: 600;
 }
 /************************* AUTH STYLING *************************/
 

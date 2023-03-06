@@ -29,7 +29,7 @@ Route::get('signup', function () {
 
 Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 
-Route::middleware(['auth:sanctum'])->get('farmers', function () {
+Route::middleware(['auth'])->get('farmers', function () {
     return view('farmers');
 })->name('farmers');
 
