@@ -51,7 +51,7 @@
           <br>
           <div class="Remember">
             <div class="r-me">
-                <input type="checkbox" name="remember-me "><span> Remember me</span> 
+                <input type="checkbox" name="remember" value="1"><span> Remember me</span> 
             </div>
             <div class="f-passw">
                 <a href="{{ route('password.request')}}" class="forgot-pass">Forgot password</a>

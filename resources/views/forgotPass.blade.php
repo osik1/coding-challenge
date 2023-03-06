@@ -48,7 +48,7 @@
           </div>
           <br> 
           <div>
-              <button type="submit" name="register-btn" class="btn btn-big">Send Reset Link</button>
+              <button type="submit" name="register-btn" class="btn btn-big">send reset link</button>
           </div>
         </form>
     </div>
