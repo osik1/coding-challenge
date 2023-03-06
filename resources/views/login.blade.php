@@ -35,11 +35,11 @@
           
            <div>
               <label for="">Email</label>
-              <input type="email" name="email"  value ="{{ __('email') }}" class="text-input" placeholder="Email or username">
+              <input type="email" name="email"  value =" " class="text-input" placeholder="Email or username">
           </div>
           <div>
               <label for="">Passw</label>
-              <input type="password" name="password"  value ="{{ __('password') }}" class="text-input" placeholder="Password">
+              <input type="password" name="password"  value =" " class="text-input" placeholder="Password">
           </div>
           <br>
           <div class="Remember">

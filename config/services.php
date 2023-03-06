@@ -32,10 +32,11 @@ return [
     ],
 
     'google' => [
-        'client_id' => ('329321128440-dlq8n8e1q70lm3f95me9nvg2gvnoa6ai.apps.googleusercontent.com'),
-        'client_secret' => ('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'),
-        'redirect' => ('http://127.0.0.1:8000/callback/google'),
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
+    
     'twitter' => [
         'client_id' => env('TWITTER_CLIENT_ID'),
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
