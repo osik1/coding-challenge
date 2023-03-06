@@ -19,7 +19,7 @@
            
          }}}
     </script>
-    <title>Login</title>
+    <title>Reset Password</title>
 </head>
 <body>
    <div class="page-wrapper">
@@ -27,12 +27,17 @@
         <div class="logo-box">
             <img src="{{ asset('assets/materials/e-ADAPP-logo-23.png')}}" class="form-logo" alt="">
         </div>
-        <form action="{{ route('login.post') }}" method="POST">
+        <form action="{{ route('password.update') }}" method="POST">
         @csrf
-            <h1 class="form-header">Login</h1>
+            <h1 class="form-header">Reset Password</h1>
               <!-- //alert message  -->
-
-            <input type="hidden" name="id" value =""> 
+                <!-- //alert message  -->
+                @if (session('success'))
+                    <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                    </div>
+                @endif
+              <input type="hidden" name="token" value="{{ $token }}">
           
            <div>
               <label for="">Email</label>
@@ -48,50 +53,19 @@
                 <span class="text-danger">{{ $errors->first('password') }}</span>
               @endif
           </div>
-          <br>
-          <div class="Remember">
-            <div class="r-me">
-                <input type="checkbox" name="remember-me "><span> Remember me</span> 
-            </div>
-            <div class="f-passw">
-                <a href="{{ route('password.request')}}" class="forgot-pass">Forgot password</a>
-            </div> 
-          </div> 
+          <div>
+              <label for="">Passw</label>
+              <input type="password" name="password_confirmation"  value ="" class="text-input" placeholder="Confirm Password">
+              @if ($errors->has('password_confirmation'))
+                <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
+              @endif
+          </div>
           <br>  
           <div>
-              <button type="submit" name="register-btn" class="btn btn-big">Login</button>
-          </div>
-          <br>
-          <p>Don't have an account? <a href="{{ url('signup')}}">Sign up</a></p>
-          <br>
-          <div class="social-header">
-            <div class="line1">
-                <hr size="2" width="90%" color="black">
-            </div>
-            <div class="head">
-                <h4>Or continue with</h4>
-            </div>
-            <div class="line2">
-                <hr size="2" width="90%" color="black">
-            </div>
-          </div>
-          <div class="social-login">
-            <div class="social-links">
-                <div class="google">
-                    <a href="{{ route('auth.google') }}"><img src="assets/materials/search.png" alt=""></a>
-                </div>
-                <div class="facebook">
-                    <a href="  "><img src="assets/materials/facebook.png" alt=""></a>
-                </div>
-                <div class="twitter">
-                    <a href="{{ route('auth.twitter') }}"><img src="assets/materials/twitter.png" alt=""></a>
-                </div>
-            </div>
+              <button type="submit" name="register-btn" class="btn btn-big">Reset</button>
           </div>
         </form>
-        <div class="form-footer">
-            <p>By clicking the button you agree to our <a href="">terms of us</a> and <a href="">privacy policy</a></p>
-        </div>
+    
     </div>
 
     <div class="image-banner">

@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Exception;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Laravel\Socialite\Facades\Socialite;
+
+
 
 class AuthController extends Controller
 {
@@ -50,6 +56,12 @@ class AuthController extends Controller
     }
 
 
+    //Facebook Login
+    public function redirectToFacebook(){
+        return Socialite::driver('facebook')->stateless()->redirect();
+    }
+
+
     /**
      * Handle Call back for google signup
      */
@@ -65,7 +77,7 @@ class AuthController extends Controller
                 Auth::login($find_user);
                 return redirect('/dashboard');
             }else {
-                $new_user = User::updateOrcreate([ 'social_id' => $user->getId(),], [
+                $new_user = User::updateOrcreate([ 'social_id' => $user->id,], [
                     'name' => $user->name,
                     'email' => $user->email,
                     'avatar' => $user->avatar,
@@ -95,7 +107,37 @@ class AuthController extends Controller
                 Auth::login($find_user);
                 return redirect('/dashboard');
             }else{
-                $new_user = User::updateOrcreate([ 'social_id' => $user->getId(),], [
+                $new_user = User::updateOrcreate([ 'social_id' => $user->id,], [
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'avatar' => $user->avatar,
+                    'social_type' => 'twitter',
+                ]);
+
+                Auth::login($new_user);
+                return redirect('/dashboard');
+            }
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
+
+
+       /**
+     * Handle all social callbacks
+     */
+    public function handleFacebookCallback()
+    {
+        try {
+            $user = Socialite::driver('facebook')->user();
+
+            $find_user = User::where('social_id', $user->id)->where('social_type', 'facebook')->first();
+            if($find_user){
+                Auth::login($find_user);
+                return redirect('/dashboard');
+            }else{
+                $new_user = User::updateOrcreate([ 'social_id' => $user->id,], [
                     'name' => $user->name,
                     'email' => $user->email,
                     'avatar' => $user->avatar,
@@ -151,6 +193,60 @@ class AuthController extends Controller
 
 
 
+    /**
+     * Forgot password
+     */
+    public function forgot_password(Request $request)
+    {
+        $request->validate(['email' => 'required|email']);
+
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+     
+        return $status === Password::RESET_LINK_SENT
+            ? back()->with(['status' => __($status)])
+            : back()->withErrors(['email' => __($status)]);
+        
+        return back()->with('message', 'We have e-mailed your password reset link!');
+
+    }
+
+
+    /**
+     * Reseting Password
+     */
+    public function reset_password(Request $request)
+    {
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8|confirmed',
+        ]);
+     
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function (User $user, string $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password)
+                ])->setRememberToken(Str::random(60));
+     
+                $user->save();
+     
+                event(new PasswordReset($user));
+            }
+        );
+     
+        return $status === Password::PASSWORD_RESET
+            ? redirect()->route('login')->with('status', __($status))
+            : back()->withErrors(['email' => [__($status)]]);
+        
+        return redirect('login')->with('message', 'Your password has been changed!');
+
+    }
+
+
+    // Dashboard view function
     public function dashboard()
     {
         if(Auth::check()){

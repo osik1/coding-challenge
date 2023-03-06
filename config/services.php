@@ -43,4 +43,10 @@ return [
         'redirect' => 'http://localhost:8000/auth/twitter/callback',
     ],
 
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => 'your_redirect_url',
+     ],
+
 ];
