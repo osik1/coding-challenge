@@ -31,12 +31,17 @@
         @csrf
             <h1 class="form-header">Login</h1>
               <!-- //alert message  -->
+              @if (session('error'))
+            <div class="alert alert-error" role="alert">
+                {{ session('error') }}
+            </div>
+            @endif
 
             <input type="hidden" name="id" value =""> 
           
            <div>
               <label for="">Email</label>
-              <input type="email" name="email"  value ="" class="text-input" placeholder="Email or username">
+              <input type="email" name="email"  value ="{{old('email')}}" class="text-input" placeholder="Email or username">
               @if ($errors->has('email'))
                 <span class="text-danger">{{ $errors->first('email') }}</span>
               @endif
@@ -51,7 +56,7 @@
           <br>
           <div class="Remember">
             <div class="r-me">
-                <input type="checkbox" name="remember" value="1"><span> Remember me</span> 
+                <input type="checkbox" name="remember" id="remember" value="old('remember') ? 'checked' : '' }}" ><span> Remember me</span> 
             </div>
             <div class="f-passw">
                 <a href="{{ route('password.request')}}" class="forgot-pass">Forgot password</a>

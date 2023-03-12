@@ -35,14 +35,14 @@
             <input type="hidden" name="id" value ="">
             <div>
                <label for="">Username</label>
-               <input type="text" name="name" value ="" class="text-input" placeholder="Enter your username">
+               <input type="text" name="name" value ="{{old('name')}}" class="text-input" placeholder="Enter your username">
                @if ($errors->has('name'))
                 <span class="text-danger">{{ $errors->first('name') }}</span>
                @endif
            </div>
            <div>
               <label for="">Email</label>
-              <input type="email" name="email"  value ="" class="text-input" placeholder="Enter your email">
+              <input type="email" name="email"  value ="{{old('email')}}" class="text-input" placeholder="Enter your email">
               @if ($errors->has('email'))
                 <span class="text-danger">{{ $errors->first('email') }}</span>
               @endif
